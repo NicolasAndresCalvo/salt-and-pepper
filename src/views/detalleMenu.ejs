@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <%- include('./partials/header.ejs') %>
+    <div class="ps-content">
+      <div class="ps-row ps-padding-64" id="menu">
+        <div class="ps-col l6 ps-padding-large">
+
+          <!-- <h1 class="ps-center">Carpaccio fresco</h1> -->
+          <h1 class="ps-center"><%= product.titulo %></h1>
+          <br />
+          <h4><%= product.descripcionCorta %></h4>
+          <p class="ps-text-grey">
+            <% if(product.descripcionDetallada.length) { %>
+              <%= product.descripcionDetallada %>
+              <% }else { %>
+                Plato tipico
+              <% } %>
+            $ <%= product.precio %>
+          </p>
+        </div>
+
+        <div class="ps-col l6 ps-padding-large ps-img-menu">
+          <img
+            src="/images/<%= product.img %>"
+            class="ps-round ps-image ps-opacity-min"
+            alt="Menu"
+          />
+        </div>
+      </div>
+      <%- include('./partials/footer.ejs') %>
+    </div>
+  </body>
+</html>
